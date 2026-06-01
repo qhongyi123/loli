@@ -1,0 +1,32 @@
+﻿<svg class="world-map" viewBox="0 0 1254 369" xmlns="http://www.w3.org/2000/svg">
+  <defs><filter id="map-glow"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#C41E3A" flood-opacity="0.5"/></filter></defs>
+  <rect width="1254" height="369" fill="#0a0a0a"/>
+  <g class="map-region-group" id="region-na">
+    <path class="map-region" data-name="北美洲" d="M228,18h6v9h-6Z M240,18h6v9h-6Z M258,18h6v9h-6Z M270,18h6v9h-6Z M282,18h84v9h-84Z M78,27h6v9h-6Z M96,27h6v9h-6Z M120,27h6v9h-6Z M174,27h6v9h-6Z M186,27h72v9h-72Z M36,36h222v9h-222Z M24,45h216v9h-216Z M252,45h6v9h-6Z M12,54h6v9h-6Z M24,54h36v9h-36Z M66,54h6v9h-6Z M78,54h156v9h-156Z M252,54h6v9h-6Z M90,63h168v9h-168Z M90,72h168v9h-168Z M78,81h180v9h-180Z M78,90h174v9h-174Z M78,99h156v9h-156Z M78,108h132v9h-132Z M90,117h54v9h-54Z M150,117h6v9h-6Z M198,117h12v9h-12Z M216,117h6v9h-6Z M102,126h42v9h-42Z M156,126h54v9h-54Z M228,126h12v9h-12Z M120,135h66v9h-66Z M198,135h12v9h-12Z M216,135h6v9h-6Z M228,135h36v9h-36Z M150,144h6v9h-6Z M162,144h30v9h-30Z M210,144h54v9h-54Z" fill="#1a1a1a" />
+  </g>
+  <g class="map-region-group" id="region-gl">
+    <path class="map-region" data-name="格陵兰岛" d="M438,27h48v9h-48Z M492,27h6v9h-6Z M516,27h6v9h-6Z M528,27h18v9h-18Z M438,36h6v9h-6Z M450,36h48v9h-48Z M528,36h18v9h-18Z M438,45h48v9h-48Z M492,45h6v9h-6Z M528,45h18v9h-18Z M438,54h48v9h-48Z M492,54h6v9h-6Z M438,63h60v9h-60Z M438,72h60v9h-60Z M438,81h36v9h-36Z" fill="#1a1a1a" />
+  </g>
+  <g class="map-region-group" id="region-sa">
+    <path class="map-region" data-name="南美洲" d="M186,153h96v9h-96Z M186,162h120v9h-120Z M186,171h144v9h-144Z M336,171h6v9h-6Z M186,180h174v9h-174Z M198,189h162v9h-162Z M204,198h144v9h-144Z M228,207h120v9h-120Z M228,216h108v9h-108Z M228,225h90v9h-90Z M228,234h6v9h-6Z M240,234h66v9h-66Z M240,243h54v9h-54Z M240,252h48v9h-48Z M240,261h42v9h-42Z M252,270h36v9h-36Z M294,270h12v9h-12Z M252,279h12v9h-12Z M270,279h6v9h-6Z M282,279h12v9h-12Z" fill="#1a1a1a" />
+  </g>
+  <g class="map-region-group" id="region-eu">
+    <path class="map-region" data-name="欧洲" d="M600,18h48v9h-48Z M702,18h24v9h-24Z M732,18h6v9h-6Z M786,18h6v9h-6Z M600,27h42v9h-42Z M732,27h6v9h-6Z M744,27h6v9h-6Z M600,36h30v9h-30Z M636,36h6v9h-6Z M702,36h90v9h-90Z M612,45h6v9h-6Z M624,45h6v9h-6Z M690,45h102v9h-102Z M648,54h24v9h-24Z M690,54h6v9h-6Z M702,54h90v9h-90Z M636,63h6v9h-6Z M648,63h144v9h-144Z M660,72h132v9h-132Z M636,81h6v9h-6Z M648,81h132v9h-132Z M786,81h6v9h-6Z M636,90h36v9h-36Z M702,90h24v9h-24Z M732,90h60v9h-60Z M648,99h66v9h-66Z M756,99h12v9h-12Z M780,99h12v9h-12Z M624,108h168v9h-168Z M606,117h186v9h-186Z M606,126h186v9h-186Z" fill="#1a1a1a" />
+  </g>
+  <g class="map-region-group" id="region-af">
+    <path class="map-region" data-name="非洲" d="M606,135h186v9h-186Z M606,144h186v9h-186Z M618,153h174v9h-174Z M636,162h24v9h-24Z M666,162h6v9h-6Z M690,162h102v9h-102Z M702,171h90v9h-90Z M702,180h90v9h-90Z M714,189h78v9h-78Z M702,198h90v9h-90Z M702,207h90v9h-90Z M714,216h78v9h-78Z M714,225h72v9h-72Z M726,234h42v9h-42Z" fill="#1a1a1a" />
+  </g>
+  <g class="map-region-group" id="region-as">
+    <path class="map-region" data-name="亚洲" d="M882,18h6v9h-6Z M894,18h6v9h-6Z M906,18h12v9h-12Z M810,27h24v9h-24Z M840,27h6v9h-6Z M852,27h6v9h-6Z M864,27h174v9h-174Z M1044,27h6v9h-6Z M1056,27h6v9h-6Z M1068,27h6v9h-6Z M1098,27h6v9h-6Z M1110,27h6v9h-6Z M1122,27h6v9h-6Z M792,36h378v9h-378Z M792,45h378v9h-378Z M792,54h312v9h-312Z M1110,54h6v9h-6Z M1122,54h6v9h-6Z M1134,54h24v9h-24Z M792,63h312v9h-312Z M1134,63h24v9h-24Z M792,72h324v9h-324Z M1152,72h6v9h-6Z M792,81h312v9h-312Z M1110,81h6v9h-6Z M1122,81h24v9h-24Z M792,90h42v9h-42Z M846,90h246v9h-246Z M1098,90h6v9h-6Z M1122,90h12v9h-12Z M792,99h312v9h-312Z M1110,99h6v9h-6Z M1122,99h12v9h-12Z M792,108h288v9h-288Z M1110,108h6v9h-6Z M792,117h300v9h-300Z M792,126h6v9h-6Z M810,126h66v9h-66Z M906,126h162v9h-162Z M792,135h84v9h-84Z M918,135h42v9h-42Z M996,135h54v9h-54Z M1080,135h12v9h-12Z M792,144h60v9h-60Z M930,144h30v9h-30Z M990,144h6v9h-6Z M1002,144h6v9h-6Z M1014,144h42v9h-42Z M1068,144h6v9h-6Z M1080,144h36v9h-36Z M792,153h60v9h-60Z M930,153h30v9h-30Z M1014,153h12v9h-12Z M1080,153h42v9h-42Z M1152,153h6v9h-6Z M792,162h54v9h-54Z M918,162h12v9h-12Z M1002,162h36v9h-36Z M1050,162h42v9h-42Z M1110,162h6v9h-6Z M1122,162h12v9h-12Z M1140,162h6v9h-6Z M792,171h30v9h-30Z M1014,171h90v9h-90Z M1110,171h6v9h-6Z M1122,171h66v9h-66Z M792,180h18v9h-18Z M792,189h30v9h-30Z M840,189h6v9h-6Z M792,198h60v9h-60Z M882,198h6v9h-6Z M792,207h6v9h-6Z M822,207h18v9h-18Z M864,207h12v9h-12Z M792,216h6v9h-6Z M810,216h30v9h-30Z M876,270h12v9h-12Z" fill="#1a1a1a" />
+  </g>
+  <g class="map-region-group" id="region-oc">
+    <path class="map-region" data-name="大洋洲" d="M1062,234h78v9h-78Z M1158,234h12v9h-12Z M1182,234h54v9h-54Z M1092,243h6v9h-6Z M1104,243h24v9h-24Z M1134,243h6v9h-6Z M1158,243h78v9h-78Z M1242,243h6v9h-6Z M1134,252h90v9h-90Z M1242,252h6v9h-6Z M1116,261h108v9h-108Z M1086,270h150v9h-150Z M1086,279h150v9h-150Z M1086,288h54v9h-54Z M1146,288h78v9h-78Z M1158,297h54v9h-54Z M1170,306h12v9h-12Z M1188,306h6v9h-6Z M1236,306h12v9h-12Z M1224,315h24v9h-24Z M1212,324h6v9h-6Z" fill="#1a1a1a" />
+  </g>
+  <text class="map-label" x="170" y="105" text-anchor="middle">北美洲</text>
+  <text class="map-label" x="490" y="50" text-anchor="middle">格陵兰岛</text>
+  <text class="map-label" x="155" y="175" text-anchor="middle">南美洲</text>
+  <text class="map-label" x="690" y="62" text-anchor="middle">欧洲</text>
+  <text class="map-label" x="690" y="210" text-anchor="middle">非洲</text>
+  <text class="map-label" x="960" y="120" text-anchor="middle">亚洲</text>
+  <text class="map-label" x="1110" y="270" text-anchor="middle">大洋洲</text>
+</svg>

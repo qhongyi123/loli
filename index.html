@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>萝莉公司 — Game UI</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="game-frame">
+
+    <!-- ===== BACKGROUND LAYERS ===== -->
+    <div class="texture-overlay"></div>
+
+    <!-- structural slashes -->
+    <div class="struct-slice s1"></div>
+    <div class="struct-slice s2"></div>
+    <div class="struct-slice s3"></div>
+    <div class="struct-slice s4"></div>
+    <div class="struct-slice s5"></div>
+    <div class="struct-slice s6"></div>
+    <div class="struct-slice s7"></div>
+
+    <!-- geometric fragments -->
+    <div class="geo tri-red-1"></div>
+    <div class="geo tri-red-2"></div>
+    <div class="geo tri-red-3"></div>
+    <div class="geo tri-black-1"></div>
+    <div class="geo tri-black-2"></div>
+    <div class="geo tri-gold-1"></div>
+    <div class="geo tri-gold-2"></div>
+
+    <div class="geo bar-red-1"></div>
+    <div class="geo bar-black-1"></div>
+    <div class="geo bar-black-2"></div>
+    <div class="geo bar-gold-1"></div>
+    <div class="geo bar-gold-2"></div>
+
+    <div class="geo circ-1"></div>
+    <div class="geo circ-2"></div>
+    <div class="geo circ-3"></div>
+
+    <div class="geo diamond-1"></div>
+    <div class="geo diamond-2"></div>
+
+    <!-- radial lines -->
+    <div class="radial r1"></div>
+    <div class="radial r2"></div>
+    <div class="radial r3"></div>
+    <div class="radial r4"></div>
+    <div class="radial r5"></div>
+    <div class="radial r6"></div>
+    <div class="radial r7"></div>
+    <div class="radial r8"></div>
+
+    <!-- stamps -->
+    <div class="stamp stamp-1">// H.Q.</div>
+    <div class="stamp stamp-2">LOLI</div>
+
+    <!-- scratches / wear -->
+    <div class="scratches"></div>
+
+    <!-- ===== LOADING SCREEN ===== -->
+    <div class="screen screen-loading" id="screen-loading">
+        <div class="load-spinner-wrap">
+            <div class="load-spinner-ring"></div>
+            <div class="clock-hand-short"></div>
+            <div class="clock-hand-long"></div>
+            <div class="clock-dot"></div>
+        </div>
+        <div class="loading-tip" id="loading-tip"></div>
+    </div>
+
+    <!-- ===== SETTINGS OVERLAY ===== -->
+    <div class="settings-overlay" id="settings-overlay">
+        <div class="settings-panel">
+            <div class="settings-panel-title">SETTINGS</div>
+            <div class="settings-row">
+                <span class="settings-label">过渡动画</span>
+                <button class="settings-toggle on" id="toggle-transition"></button>
+            </div>
+            <div class="settings-row">
+                <span class="settings-label">开发者面板</span>
+                <button class="settings-dev-btn" id="btn-dev-panel">OPEN</button>
+            </div>
+            <button class="settings-close" id="btn-settings-close">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- ===== DEVELOPER PANEL OVERLAY ===== -->
+    <div class="dev-overlay" id="dev-overlay">
+        <div class="dev-panel">
+            <div class="dev-panel-title">DEVELOPER PANEL</div>
+            <div class="dev-btn-grid">
+                <button class="dev-jump-btn" data-screen="screen-start">开始界面</button>
+                <button class="dev-jump-btn" data-screen="screen-select">选择界面</button>
+                <button class="dev-jump-btn" data-screen="screen-virus">病毒选择</button>
+                <button class="dev-jump-btn" data-screen="screen-world">世界选择</button>
+                <button class="dev-jump-btn" data-screen="screen-talent">天赋</button>
+                <button class="dev-jump-btn" data-screen="screen-opening">开局选择</button>
+                <button class="dev-jump-btn" data-screen="screen-map">世界地图</button>
+                <button class="dev-jump-btn" data-screen="screen-game">游戏界面</button>
+                <button class="dev-jump-btn" data-screen="screen-upgrade">病毒升级</button>
+                <button class="dev-jump-btn" data-screen="screen-random-map">随机地图</button>
+            </div>
+            <button class="dev-close" id="btn-dev-close">CLOSE</button>
+        </div>
+    </div>
+
+    <!-- ===== START SCREEN ===== -->
+    <div class="screen screen-start" id="screen-start">
+        <div class="start-title">萝 莉 公 司</div>
+        <button class="btn-start" id="btn-start">START</button>
+        <button class="btn-settings" id="btn-settings" title="设置"></button>
+    </div>
+
+    <!-- ===== SELECT SCREEN ===== -->
+    <div class="screen screen-select" id="screen-select">
+        <div class="header">
+            <button class="btn-top-left" id="btn-back" title="返回"></button>
+            <span class="title">萝 莉 公 司</span>
+        </div>
+
+        <div class="main-area">
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img class="card-img" src="" alt="" data-src="">
+                    <span class="card-img-tag">IMG</span>
+                </div>
+                <span class="card-label">开始游戏</span>
+                <div class="card-cut cut-1"></div>
+            </div>
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img class="card-img" src="" alt="" data-src="">
+                    <span class="card-img-tag">IMG</span>
+                </div>
+                <span class="card-label">继续游戏</span>
+            </div>
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img class="card-img" src="" alt="" data-src="">
+                    <span class="card-img-tag">IMG</span>
+                </div>
+                <span class="card-label">自定义病毒</span>
+                <div class="card-cut cut-2"></div>
+            </div>
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img class="card-img" src="" alt="" data-src="">
+                    <span class="card-img-tag">IMG</span>
+                </div>
+                <span class="card-label">创意工坊</span>
+            </div>
+        </div>
+
+        <button class="tri-corner tri-left" title="上一个">
+            <span class="tri-arrow">◄</span>
+        </button>
+
+        <button class="tri-corner tri-right" title="下一个">
+            <span class="tri-arrow">►</span>
+        </button>
+    </div>
+
+    <!-- ===== VIRUS SELECT SCREEN ===== -->
+    <div class="screen screen-virus" id="screen-virus">
+        <div class="header">
+            <button class="btn-top-left" id="btn-virus-back" title="返回"></button>
+            <span class="title">选 择 病 毒</span>
+        </div>
+
+        <div class="virus-area">
+            <div class="virus-watermark">LOLI</div>
+            <div class="virus-card">
+                <img class="virus-card-img" src="" alt="">
+                <div class="virus-card-overlay"></div>
+                <div class="virus-card-text">
+                    <div class="virus-card-name">小萝莉病毒</div>
+                    <div class="virus-card-desc">潜伏性超强的病毒，在潜移默化中将人们都变成小萝莉！</div>
+                </div>
+            </div>
+            <div class="virus-card">
+                <img class="virus-card-img" src="" alt="">
+                <div class="virus-card-overlay"></div>
+                <div class="virus-card-text">
+                    <div class="virus-card-name">伊菈病毒</div>
+                    <div class="virus-card-desc">传说，在远古时期，有一个种族的女性都拥有牛子......</div>
+                </div>
+            </div>
+            <div class="virus-card">
+                <img class="virus-card-img" src="" alt="">
+                <div class="virus-card-overlay"></div>
+                <div class="virus-card-text">
+                    <div class="virus-card-name">性化病毒</div>
+                    <div class="virus-card-desc">当群体观念可以被病毒操控，似乎出现什么都不奇怪了？</div>
+                </div>
+            </div>
+            <div class="virus-card">
+                <img class="virus-card-img" src="" alt="">
+                <div class="virus-card-overlay"></div>
+                <div class="virus-card-text">
+                    <div class="virus-card-name">血族病毒？</div>
+                    <div class="virus-card-desc">沉睡千年的血族醒来了，她醒来后做出的第一件事居然是吸...?</div>
+                </div>
+            </div>
+            <div class="virus-card">
+                <img class="virus-card-img" src="" alt="">
+                <div class="virus-card-overlay"></div>
+                <div class="virus-card-text">
+                    <div class="virus-card-name">魔法病毒</div>
+                    <div class="virus-card-desc">当魔法出现在这个世界上，会发生什么呢</div>
+                </div>
+            </div>
+            <div class="virus-card">
+                <img class="virus-card-img" src="" alt="">
+                <div class="virus-card-overlay"></div>
+                <div class="virus-card-text">
+                    <div class="virus-card-name">转换病毒</div>
+                    <div class="virus-card-desc">患者碰过的东西会以匪夷所思的方式进行转换......</div>
+                </div>
+            </div>
+            <div class="virus-card">
+                <img class="virus-card-img" src="" alt="">
+                <div class="virus-card-overlay"></div>
+                <div class="virus-card-text">
+                    <div class="virus-card-name">虫！虫！虫！</div>
+                    <div class="virus-card-desc">虫！虫！虫！虫！虫！虫！虫！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== WORLD SELECT SCREEN ===== -->
+    <div class="screen screen-world" id="screen-world">
+        <div class="header">
+            <button class="btn-top-left" id="btn-world-back" title="返回"></button>
+            <span class="title">选 择 世 界</span>
+        </div>
+
+        <div class="world-area">
+            <div class="world-watermark">WORLD</div>
+            <div class="world-card">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">现代世界</div>
+                    <div class="world-card-desc">正常的现代社会，以科学的手段对付病毒</div>
+                </div>
+            </div>
+            <div class="world-card">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">修仙世界</div>
+                    <div class="world-card-desc">类似玄幻小说中的世界</div>
+                </div>
+            </div>
+            <div class="world-card">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">西幻世界</div>
+                    <div class="world-card-desc">类似西幻作品中的世界</div>
+                </div>
+            </div>
+            <div class="world-card">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">中世纪世界</div>
+                    <div class="world-card-desc">传统中世纪</div>
+                </div>
+            </div>
+            <div class="world-card">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">末日废土</div>
+                    <div class="world-card-desc">末日来临，你的病毒还能传播吗？</div>
+                </div>
+            </div>
+            <div class="world-card">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">混合世界</div>
+                    <div class="world-card-desc">几个世界被莫名其妙的混合到一起了</div>
+                </div>
+            </div>
+            <div class="world-card world-card-locked">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">???</div>
+                    <div class="world-card-desc">敬请期待</div>
+                </div>
+            </div>
+            <div class="world-card world-card-locked">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">???</div>
+                    <div class="world-card-desc">敬请期待</div>
+                </div>
+            </div>
+            <div class="world-card world-card-locked">
+                <img class="world-card-img" src="" alt="">
+                <div class="world-card-overlay"></div>
+                <div class="world-card-text">
+                    <div class="world-card-name">???</div>
+                    <div class="world-card-desc">敬请期待</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TALENT SCREEN ===== -->
+    <div class="screen screen-talent" id="screen-talent">
+        <div class="header">
+            <button class="btn-top-left" id="btn-talent-back" title="返回"></button>
+            <span class="title">病 毒 天 赋</span>
+        </div>
+        <div class="talent-area">
+        </div>
+        <button class="btn-continue" id="btn-continue">继 续</button>
+    </div>
+
+    <!-- ===== OPENING SELECT SCREEN ===== -->
+    <div class="screen screen-opening" id="screen-opening">
+        <div class="header">
+            <button class="btn-top-left" id="btn-opening-back" title="返回"></button>
+            <span class="title">选 择 开 局</span>
+        </div>
+        <div class="opening-area">
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">标准开局</div>
+                    <div class="opening-card-tag">均衡发展</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">快速传染</div>
+                    <div class="opening-card-tag">高传染性</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">潜伏暗影</div>
+                    <div class="opening-card-tag">隐蔽扩散</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">爆发流行</div>
+                    <div class="opening-card-tag">症状猛烈</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">资源丰富</div>
+                    <div class="opening-card-tag">资源充足</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">随机应变</div>
+                    <div class="opening-card-tag">随机事件</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">极限挑战</div>
+                    <div class="opening-card-tag">高危高回报</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">静默扩散</div>
+                    <div class="opening-card-tag">无声蔓延</div>
+                </div>
+            </div>
+            <div class="opening-card">
+                <img class="opening-card-img" src="" alt="">
+                <div class="opening-card-overlay"></div>
+                <div class="opening-card-text">
+                    <div class="opening-card-name">闪电传播</div>
+                    <div class="opening-card-tag">极速通关</div>
+                </div>
+            </div>
+        </div>
+        <button class="btn-continue" id="btn-opening-continue">继 续</button>
+    </div>
+
+    <!-- ===== WORLD MAP SCREEN ===== -->
+    <div class="screen screen-map" id="screen-map">
+        <div class="header">
+            <button class="btn-top-left" id="btn-map-back" title="返回"></button>
+            <span class="title">现 代 世 界</span>
+        </div>
+        <div class="map-area" id="map-area">
+            <svg class="world-map" viewBox="0 0 1254 369" xmlns="http://www.w3.org/2000/svg">
+  <defs><filter id="map-glow-screen" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#C41E3A" flood-opacity="0.5"/></filter></defs>
+  <rect width="1254" height="369" fill="#0a0a0a"/>
+  <g class="map-region-group" id="region-na">
+    <path class="map-region" data-name="北美洲" d="M228,18h6v9h-6Z M240,18h6v9h-6Z M258,18h6v9h-6Z M270,18h6v9h-6Z M282,18h84v9h-84Z M78,27h6v9h-6Z M96,27h6v9h-6Z M120,27h6v9h-6Z M174,27h6v9h-6Z M186,27h72v9h-72Z M36,36h222v9h-222Z M24,45h216v9h-216Z M252,45h6v9h-6Z M12,54h6v9h-6Z M24,54h36v9h-36Z M66,54h6v9h-6Z M78,54h156v9h-156Z M252,54h6v9h-6Z M90,63h168v9h-168Z M90,72h168v9h-168Z M78,81h180v9h-180Z M78,90h174v9h-174Z M78,99h156v9h-156Z M78,108h132v9h-132Z M90,117h54v9h-54Z M150,117h6v9h-6Z M198,117h12v9h-12Z M216,117h6v9h-6Z M102,126h42v9h-42Z M156,126h54v9h-54Z M228,126h12v9h-12Z M120,135h66v9h-66Z M198,135h12v9h-12Z M216,135h6v9h-6Z M228,135h36v9h-36Z M150,144h6v9h-6Z M162,144h30v9h-30Z M210,144h54v9h-54Z" />
+  </g>
+  <g class="map-region-group" id="region-gl">
+    <path class="map-region" data-name="格陵兰岛" d="M438,27h48v9h-48Z M492,27h6v9h-6Z M516,27h6v9h-6Z M528,27h18v9h-18Z M438,36h6v9h-6Z M450,36h48v9h-48Z M528,36h18v9h-18Z M438,45h48v9h-48Z M492,45h6v9h-6Z M528,45h18v9h-18Z M438,54h48v9h-48Z M492,54h6v9h-6Z M438,63h60v9h-60Z M438,72h60v9h-60Z M438,81h36v9h-36Z" />
+  </g>
+  <g class="map-region-group" id="region-sa">
+    <path class="map-region" data-name="南美洲" d="M186,153h96v9h-96Z M186,162h120v9h-120Z M186,171h144v9h-144Z M336,171h6v9h-6Z M186,180h174v9h-174Z M198,189h162v9h-162Z M204,198h144v9h-144Z M228,207h120v9h-120Z M228,216h108v9h-108Z M228,225h90v9h-90Z M228,234h6v9h-6Z M240,234h66v9h-66Z M240,243h54v9h-54Z M240,252h48v9h-48Z M240,261h42v9h-42Z M252,270h36v9h-36Z M294,270h12v9h-12Z M252,279h12v9h-12Z M270,279h6v9h-6Z M282,279h12v9h-12Z" />
+  </g>
+  <g class="map-region-group" id="region-eu">
+    <path class="map-region" data-name="欧洲" d="M600,18h48v9h-48Z M702,18h24v9h-24Z M732,18h6v9h-6Z M786,18h6v9h-6Z M600,27h42v9h-42Z M732,27h6v9h-6Z M744,27h6v9h-6Z M600,36h30v9h-30Z M636,36h6v9h-6Z M702,36h90v9h-90Z M612,45h6v9h-6Z M624,45h6v9h-6Z M690,45h102v9h-102Z M648,54h24v9h-24Z M690,54h6v9h-6Z M702,54h90v9h-90Z M636,63h6v9h-6Z M648,63h144v9h-144Z M660,72h132v9h-132Z M636,81h6v9h-6Z M648,81h132v9h-132Z M786,81h6v9h-6Z M636,90h36v9h-36Z M702,90h24v9h-24Z M732,90h60v9h-60Z M648,99h66v9h-66Z M756,99h12v9h-12Z M780,99h12v9h-12Z M624,108h168v9h-168Z M606,117h186v9h-186Z M606,126h186v9h-186Z" />
+  </g>
+  <g class="map-region-group" id="region-af">
+    <path class="map-region" data-name="非洲" d="M606,135h186v9h-186Z M606,144h186v9h-186Z M618,153h174v9h-174Z M636,162h24v9h-24Z M666,162h6v9h-6Z M690,162h102v9h-102Z M702,171h90v9h-90Z M702,180h90v9h-90Z M714,189h78v9h-78Z M702,198h90v9h-90Z M702,207h90v9h-90Z M714,216h78v9h-78Z M714,225h72v9h-72Z M726,234h42v9h-42Z" />
+  </g>
+  <g class="map-region-group" id="region-as">
+    <path class="map-region" data-name="亚洲" d="M882,18h6v9h-6Z M894,18h6v9h-6Z M906,18h12v9h-12Z M810,27h24v9h-24Z M840,27h6v9h-6Z M852,27h6v9h-6Z M864,27h174v9h-174Z M1044,27h6v9h-6Z M1056,27h6v9h-6Z M1068,27h6v9h-6Z M1098,27h6v9h-6Z M1110,27h6v9h-6Z M1122,27h6v9h-6Z M792,36h378v9h-378Z M792,45h378v9h-378Z M792,54h312v9h-312Z M1110,54h6v9h-6Z M1122,54h6v9h-6Z M1134,54h24v9h-24Z M792,63h312v9h-312Z M1134,63h24v9h-24Z M792,72h324v9h-324Z M1152,72h6v9h-6Z M792,81h312v9h-312Z M1110,81h6v9h-6Z M1122,81h24v9h-24Z M792,90h42v9h-42Z M846,90h246v9h-246Z M1098,90h6v9h-6Z M1122,90h12v9h-12Z M792,99h312v9h-312Z M1110,99h6v9h-6Z M1122,99h12v9h-12Z M792,108h288v9h-288Z M1110,108h6v9h-6Z M792,117h300v9h-300Z M792,126h6v9h-6Z M810,126h66v9h-66Z M906,126h162v9h-162Z M792,135h84v9h-84Z M918,135h42v9h-42Z M996,135h54v9h-54Z M1080,135h12v9h-12Z M792,144h60v9h-60Z M930,144h30v9h-30Z M990,144h6v9h-6Z M1002,144h6v9h-6Z M1014,144h42v9h-42Z M1068,144h6v9h-6Z M1080,144h36v9h-36Z M792,153h60v9h-60Z M930,153h30v9h-30Z M1014,153h12v9h-12Z M1080,153h42v9h-42Z M1152,153h6v9h-6Z M792,162h54v9h-54Z M918,162h12v9h-12Z M1002,162h36v9h-36Z M1050,162h42v9h-42Z M1110,162h6v9h-6Z M1122,162h12v9h-12Z M1140,162h6v9h-6Z M792,171h30v9h-30Z M1014,171h90v9h-90Z M1110,171h6v9h-6Z M1122,171h66v9h-66Z M792,180h18v9h-18Z M792,189h30v9h-30Z M840,189h6v9h-6Z M792,198h60v9h-60Z M882,198h6v9h-6Z M792,207h6v9h-6Z M822,207h18v9h-18Z M864,207h12v9h-12Z M792,216h6v9h-6Z M810,216h30v9h-30Z M876,270h12v9h-12Z" />
+  </g>
+  <g class="map-region-group" id="region-oc">
+    <path class="map-region" data-name="大洋洲" d="M1062,234h78v9h-78Z M1158,234h12v9h-12Z M1182,234h54v9h-54Z M1092,243h6v9h-6Z M1104,243h24v9h-24Z M1134,243h6v9h-6Z M1158,243h78v9h-78Z M1242,243h6v9h-6Z M1134,252h90v9h-90Z M1242,252h6v9h-6Z M1116,261h108v9h-108Z M1086,270h150v9h-150Z M1086,279h150v9h-150Z M1086,288h54v9h-54Z M1146,288h78v9h-78Z M1158,297h54v9h-54Z M1170,306h12v9h-12Z M1188,306h6v9h-6Z M1236,306h12v9h-12Z M1224,315h24v9h-24Z M1212,324h6v9h-6Z" />
+  </g>
+  <text class="map-label" x="170" y="105" text-anchor="middle">北美洲</text>
+  <text class="map-label" x="490" y="50" text-anchor="middle">格陵兰岛</text>
+  <text class="map-label" x="155" y="175" text-anchor="middle">南美洲</text>
+  <text class="map-label" x="690" y="62" text-anchor="middle">欧洲</text>
+  <text class="map-label" x="690" y="210" text-anchor="middle">非洲</text>
+  <text class="map-label" x="960" y="120" text-anchor="middle">亚洲</text>
+  <text class="map-label" x="1110" y="270" text-anchor="middle">大洋洲</text>
+</svg>
+        </div>
+        <button class="btn-continue map-continue" id="btn-map-continue">继 续</button>
+    </div>
+
+    <!-- ===== RANDOM MAP SETUP SCREEN ===== -->
+    <div class="screen screen-random-map" id="screen-random-map">
+        <div class="header">
+            <button class="btn-top-left" id="btn-rmap-back" title="返回"></button>
+            <span class="title" id="rmap-title">随 机 地 图</span>
+        </div>
+
+        <div class="rmap-main">
+            <div class="rmap-map-panel">
+                <div class="rmap-map-view" id="rmap-map-view">
+                    <svg class="rmap-map-svg" id="rmap-map-svg" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg"></svg>
+                </div>
+                <div class="rmap-map-tools">
+                    <button class="rmap-action-btn" id="btn-rmap-auto-fill">全部随机填入</button>
+                    <button class="rmap-action-btn rmap-action-fullgen" id="btn-rmap-full-gen">全图生成</button>
+                    <button class="rmap-action-btn rmap-action-clear" id="btn-rmap-clear">清空地图</button>
+                </div>
+                <div class="rmap-map-info" id="rmap-map-info">选择模块后点击地图放置，或拖拽模块到地图</div>
+            </div>
+
+            <div class="rmap-module-panel">
+                <div class="rmap-module-header">
+                    <span class="rmap-module-title">地图模块</span>
+                    <button class="rmap-gen-modules-btn" id="btn-rmap-gen-modules">生成模块</button>
+                </div>
+                <div class="rmap-mode-bar">
+                    <span class="rmap-mode-label">风格</span>
+                    <button class="rmap-mode-btn" id="btn-rmap-mode-blob" data-mode="0">多边形</button>
+                    <button class="rmap-mode-btn active" id="btn-rmap-mode-pixel" data-mode="1">像素格</button>
+                </div>
+                <div class="rmap-terrain-style-bar" id="rmap-terrain-style-bar" style="display:none;">
+                    <span class="rmap-mode-label">地形</span>
+                    <div class="rmap-style-grid">
+                        <button class="rmap-style-btn active" data-style="0">大陆</button>
+                        <button class="rmap-style-btn" data-style="1">群岛</button>
+                        <button class="rmap-style-btn" data-style="2">盘古</button>
+                        <button class="rmap-style-btn" data-style="3">破碎</button>
+                        <button class="rmap-style-btn" data-style="4">条带</button>
+                        <button class="rmap-style-btn" data-style="5">环状</button>
+                    </div>
+                </div>
+                <div class="rmap-terrain-params" id="rmap-terrain-params" style="display:none;">
+                    <div class="rmap-params-header">
+                        <span class="rmap-params-title">地形参数</span>
+                        <button class="rmap-params-reset" id="btn-rmap-params-reset" title="重置">&#x21BA;</button>
+                    </div>
+                    <div class="rmap-params-body-compact">
+                        <label class="rmap-param-label">陆地占比 <span class="rmap-param-val" id="param-val-land">35</span>%</label>
+                        <input type="range" class="rmap-param-slider" id="param-land-ratio" min="5" max="80" value="35" step="1">
+                        <label class="rmap-param-label">山脉强度 <span class="rmap-param-val" id="param-val-mountain">50</span></label>
+                        <input type="range" class="rmap-param-slider" id="param-mountain" min="0" max="100" value="50" step="1">
+                        <label class="rmap-param-label">森林密度 <span class="rmap-param-val" id="param-val-forest">50</span></label>
+                        <input type="range" class="rmap-param-slider" id="param-forest" min="0" max="100" value="50" step="1">
+                        <label class="rmap-param-label">干旱程度 <span class="rmap-param-val" id="param-val-aridity">50</span></label>
+                        <input type="range" class="rmap-param-slider" id="param-aridity" min="0" max="100" value="50" step="1">
+                        <label class="rmap-param-label">破碎度 <span class="rmap-param-val" id="param-val-frag">50</span></label>
+                        <input type="range" class="rmap-param-slider" id="param-frag" min="0" max="100" value="50" step="1">
+                        <label class="rmap-param-label">海岸复杂度 <span class="rmap-param-val" id="param-val-coast">50</span></label>
+                        <input type="range" class="rmap-param-slider" id="param-coast" min="0" max="100" value="50" step="1">
+                        <div class="rmap-params-preset-inline">
+                            <span class="rmap-params-preset-label">预设</span>
+                            <select class="rmap-params-preset-select" id="rmap-preset-select">
+                                <option value="-1">自定义</option>
+                                <option value="modern">现代世界</option>
+                                <option value="xiuxian">修仙世界</option>
+                                <option value="xihuan">西幻世界</option>
+                                <option value="medieval">中世纪</option>
+                                <option value="wasteland">末日废土</option>
+                                <option value="mixed">混合世界</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="rmap-size-controls">
+                    <span class="rmap-size-label">比例</span>
+                    <div class="rmap-size-row">
+                        <label class="rmap-size-item"><span>大</span><input type="number" id="rmap-size-large" value="1" min="0" max="8" step="1"></label>
+                        <label class="rmap-size-item"><span>中</span><input type="number" id="rmap-size-medium" value="6" min="0" max="20" step="1"></label>
+                        <label class="rmap-size-item"><span>小</span><input type="number" id="rmap-size-small" value="1" min="0" max="10" step="1"></label>
+                    </div>
+                </div>
+                <div class="rmap-module-list" id="rmap-module-list">
+                    <div class="rmap-module-empty">点击"生成模块"创建随机地形</div>
+                </div>
+                <div class="rmap-module-actions" id="rmap-module-actions" style="display:none;">
+                    <button class="rmap-action-btn" id="btn-rmap-place-random">随机填入地图</button>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn-continue rmap-continue" id="btn-rmap-continue" style="display:none;">继 续</button>
+    </div>
+
+    <!-- ===== GAME SCREEN ===== -->
+    <div class="screen screen-game" id="screen-game">
+        <div class="news-bar">
+            <div class="news-loli" id="news-loli">LOLI</div>
+            <div class="news-ticker">
+                <div class="news-ticker-track">— 病毒已在全球扩散，各国紧急启动防疫措施 — 科学家发现新型疫苗取得突破 — 世界卫生组织发布最新疫情通报 — </div>
+            </div>
+            <div class="news-time" id="news-time">2026年1月1日</div>
+        </div>
+        <div class="game-map-area" id="game-map-area">
+            <div class="game-map-inner" id="game-map-inner">
+            <svg class="world-map" viewBox="0 0 1254 369" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs><filter id="map-glow-game" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#C41E3A" flood-opacity="0.5"/></filter></defs>
+  <g class="map-region-group" id="region-na2">
+    <path class="map-region" d="M228,18L234,18L234,27L240,27L240,18L246,18L246,27L258,27L258,18L264,18L264,27L258,27L258,90L252,90L252,99L234,99L234,108L210,108L210,144L198,144L198,135L186,135L186,144L192,144L192,153L162,153L162,144L156,144L156,153L150,153L150,144L120,144L120,135L102,135L102,126L90,126L90,117L78,117L78,81L90,81L90,63L78,63L78,54L72,54L72,63L66,63L66,54L60,54L60,63L24,63L24,45L36,45L36,36L78,36L78,27L84,27L84,36L96,36L96,27L102,27L102,36L120,36L120,27L126,27L126,36L174,36L174,27L180,27L180,36L186,36L186,27L228,27Z M270,18L276,18L276,27L270,27Z M282,18L366,18L366,27L282,27Z M246,45L240,45L240,54L234,54L234,63L252,63L252,45Z M12,54L18,54L18,63L12,63Z M150,117L144,117L144,135L156,135L156,126L150,126Z M162,117L156,117L156,126L198,126L198,117Z M216,117L222,117L222,126L216,126Z M228,126L240,126L240,135L264,135L264,153L210,153L210,144L216,144L216,135L222,135L222,144L228,144Z" />
+  </g>
+  <g class="map-region-group" id="region-gl2">
+    <path class="map-region" d="M438,27L486,27L486,36L492,36L492,27L498,27L498,81L474,81L474,90L438,90Z M450,36L444,36L444,45L450,45Z M516,27L522,27L522,36L516,36Z M528,27L546,27L546,54L528,54Z M492,45L486,45L486,63L492,63Z" />
+  </g>
+  <g class="map-region-group" id="region-sa2">
+    <path class="map-region" d="M186,153L282,153L282,162L306,162L306,171L330,171L330,180L336,180L336,171L342,171L342,180L360,180L360,198L348,198L348,216L336,216L336,225L318,225L318,234L306,234L306,243L294,243L294,252L288,252L288,261L282,261L282,270L288,270L288,279L294,279L294,270L306,270L306,279L294,279L294,288L282,288L282,279L276,279L276,288L270,288L270,279L264,279L264,288L252,288L252,270L240,270L240,234L234,234L234,243L228,243L228,207L204,207L204,198L198,198L198,189L186,189Z" />
+  </g>
+  <g class="map-region-group" id="region-eu2">
+    <path class="map-region" d="M600,18L648,18L648,27L642,27L642,45L636,45L636,36L630,36L630,54L624,54L624,45L618,45L618,54L612,54L612,45L600,45Z M702,18L726,18L726,27L702,27Z M732,18L738,18L738,36L744,36L744,27L750,27L750,36L792,36L792,135L606,135L606,117L624,117L624,108L648,108L648,99L636,99L636,81L642,81L642,90L648,90L648,81L660,81L660,72L648,72L648,54L672,54L672,63L690,63L690,45L702,45L702,36L732,36Z M786,18L792,18L792,27L786,27Z M702,54L696,54L696,63L702,63Z M636,63L642,63L642,72L636,72Z M786,81L780,81L780,90L786,90Z M678,90L672,90L672,99L702,99L702,90Z M732,90L726,90L726,99L714,99L714,108L756,108L756,99L732,99Z M774,99L768,99L768,108L780,108L780,99Z" />
+  </g>
+  <g class="map-region-group" id="region-af2">
+    <path class="map-region" d="M606,135L792,135L792,225L786,225L786,234L768,234L768,243L726,243L726,234L714,234L714,216L702,216L702,198L714,198L714,189L702,189L702,171L690,171L690,162L672,162L672,171L666,171L666,162L660,162L660,171L636,171L636,162L618,162L618,153L606,153Z" />
+  </g>
+  <g class="map-region-group" id="region-as2">
+    <path class="map-region" d="M882,18L888,18L888,27L894,27L894,18L900,18L900,27L906,27L906,18L918,18L918,27L1038,27L1038,36L1044,36L1044,27L1050,27L1050,36L1056,36L1056,27L1062,27L1062,36L1068,36L1068,27L1074,27L1074,36L1098,36L1098,27L1104,27L1104,36L1110,36L1110,27L1116,27L1116,36L1122,36L1122,27L1128,27L1128,36L1170,36L1170,54L1158,54L1158,81L1152,81L1152,72L1134,72L1134,54L1128,54L1128,63L1122,63L1122,54L1116,54L1116,63L1110,63L1110,54L1104,54L1104,72L1116,72L1116,90L1110,90L1110,81L1104,81L1104,108L1080,108L1080,117L1092,117L1092,126L1068,126L1068,135L1050,135L1050,144L1056,144L1056,153L1026,153L1026,162L1038,162L1038,171L1050,171L1050,162L1080,162L1080,135L1092,135L1092,144L1116,144L1116,153L1122,153L1122,162L1116,162L1116,180L1110,180L1110,162L1092,162L1092,171L1104,171L1104,180L1014,180L1014,171L1002,171L1002,162L1014,162L1014,144L1008,144L1008,153L1002,153L1002,144L996,144L996,135L960,135L960,162L930,162L930,144L918,144L918,135L906,135L906,126L876,126L876,144L852,144L852,162L846,162L846,171L822,171L822,180L810,180L810,189L822,189L822,198L840,198L840,189L846,189L846,198L852,198L852,207L840,207L840,225L810,225L810,216L822,216L822,207L798,207L798,225L792,225L792,36L810,36L810,27L834,27L834,36L840,36L840,27L846,27L846,36L852,36L852,27L858,27L858,36L864,36L864,27L882,27Z M840,90L834,90L834,99L846,99L846,90Z M1098,90L1092,90L1092,99L1098,99Z M1122,81L1146,81L1146,90L1134,90L1134,108L1122,108Z M1110,99L1116,99L1116,117L1110,117Z M804,126L798,126L798,135L810,135L810,126Z M990,144L996,144L996,153L990,153Z M1068,144L1074,144L1074,153L1068,153Z M1152,153L1158,153L1158,162L1152,162Z M918,162L930,162L930,171L918,171Z M1122,162L1134,162L1134,171L1140,171L1140,162L1146,162L1146,171L1188,171L1188,180L1122,180Z M882,198L888,198L888,207L882,207Z M864,207L876,207L876,216L864,216Z M876,270L888,270L888,279L876,279Z" />
+  </g>
+  <g class="map-region-group" id="region-oc2">
+    <path class="map-region" d="M1062,234L1140,234L1140,252L1158,252L1158,234L1170,234L1170,243L1182,243L1182,234L1236,234L1236,252L1224,252L1224,270L1236,270L1236,288L1224,288L1224,297L1212,297L1212,306L1194,306L1194,315L1188,315L1188,306L1182,306L1182,315L1170,315L1170,306L1158,306L1158,297L1146,297L1146,288L1140,288L1140,297L1086,297L1086,270L1116,270L1116,261L1134,261L1134,243L1128,243L1128,252L1104,252L1104,243L1098,243L1098,252L1092,252L1092,243L1062,243Z M1242,243L1248,243L1248,261L1242,261Z M1236,306L1248,306L1248,324L1224,324L1224,315L1236,315Z M1212,324L1218,324L1218,333L1212,333Z" />
+  </g>
+</svg>
+            </div>
+            <div class="game-select-mode" id="game-select-mode">
+                <button class="game-mode-btn active" data-gmode="region">地点</button>
+                <button class="game-mode-btn" data-gmode="city">聚集地</button>
+            </div>
+            <div class="game-zoom-controls" id="game-zoom-controls">
+                <button class="game-zoom-btn" id="btn-zoom-in" title="放大">+</button>
+                <span class="game-zoom-level" id="game-zoom-level">100%</span>
+                <button class="game-zoom-btn" id="btn-zoom-out" title="缩小">−</button>
+                <button class="game-zoom-btn game-zoom-reset" id="btn-zoom-reset" title="重置">↺</button>
+            </div>
+        </div>
+        <div class="info-bar">
+            <div class="info-slot-wrap" id="evo-wrap">
+                <div class="evo-points" id="evo-points">进化点数：0</div>
+                <div class="info-slot evo-slot">进 化</div>
+            </div>
+            <div class="info-slot"></div>
+            <div class="info-slot info-progress" id="infection-progress">
+                <div class="progress-text" id="progress-text">选择区域查看感染进度</div>
+                <div class="progress-bar">
+                    <div class="progress-seg progress-infected" id="seg-infected" style="width:0%"></div>
+                    <div class="progress-seg progress-healthy" id="seg-healthy" style="width:0%"></div>
+                    <div class="progress-seg progress-dead" id="seg-dead" style="width:0%"></div>
+                </div>
+            </div>
+            <div class="info-slot"></div>
+            <div class="info-slot"></div>
+        </div>
+
+        <div class="loli-menu-overlay" id="loli-menu-overlay">
+            <div class="loli-menu-panel">
+                <div class="loli-menu-title">LOLI</div>
+                <button class="loli-menu-btn" id="btn-menu-resume">继 续 游 戏</button>
+                <button class="loli-menu-btn loli-menu-btn-disabled" id="btn-menu-save">保 存 游 戏</button>
+                <button class="loli-menu-btn" id="btn-menu-quit">退 出 到 主 菜 单</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== VIRUS UPGRADE SCREEN ===== -->
+    <div class="screen screen-upgrade" id="screen-upgrade">
+        <div class="header">
+            <button class="btn-top-left" id="btn-upgrade-back" title="返回"></button>
+            <span class="title">病 毒 升 级</span>
+        </div>
+        <div class="upgrade-tabs" id="upgrade-tabs">
+            <button class="upgrade-tab active" data-tab="0">病毒属性</button>
+            <button class="upgrade-tab" data-tab="1">传播</button>
+            <button class="upgrade-tab" data-tab="2">病状</button>
+            <button class="upgrade-tab" data-tab="3">特殊能力</button>
+            <button class="upgrade-tab" data-tab="4">世界适配进化</button>
+        </div>
+        <div class="upgrade-content">
+            <div class="upgrade-panel active" id="panel-attr"></div>
+            <div class="upgrade-panel" id="panel-spread">
+                <div class="hex-area">
+                    <div class="hex-grid" id="hex-grid-spread"></div>
+                </div>
+                <div class="upgrade-sidebar"></div>
+            </div>
+            <div class="upgrade-panel" id="panel-symptom">
+                <div class="hex-area">
+                    <div class="hex-grid" id="hex-grid-symptom"></div>
+                </div>
+                <div class="upgrade-sidebar"></div>
+            </div>
+            <div class="upgrade-panel" id="panel-ability">
+                <div class="hex-area">
+                    <div class="hex-grid" id="hex-grid-ability"></div>
+                </div>
+                <div class="upgrade-sidebar"></div>
+            </div>
+            <div class="upgrade-panel" id="panel-world-adapt">
+                <div class="hex-area">
+                    <div class="hex-grid" id="hex-grid-world-adapt"></div>
+                </div>
+                <div class="upgrade-sidebar"></div>
+            </div>
+        </div>
+        <div class="upgrade-info-bar">
+            <div class="upgrade-info-slot">
+                <div class="upgrade-info-label">传染力</div>
+                <div class="upgrade-info-row">
+                    <div class="upgrade-progress-track">
+                        <div class="upgrade-progress-fill" id="bar-infectivity" style="width:12%"></div>
+                    </div>
+                    <span class="upgrade-progress-num" id="num-infectivity">12%</span>
+                </div>
+            </div>
+            <div class="upgrade-info-slot">
+                <div class="upgrade-info-label">影响力</div>
+                <div class="upgrade-info-row">
+                    <div class="upgrade-progress-track">
+                        <div class="upgrade-progress-fill" id="bar-influence" style="width:8%"></div>
+                    </div>
+                    <span class="upgrade-progress-num" id="num-influence">8%</span>
+                </div>
+            </div>
+            <div class="upgrade-info-slot">
+                <div class="upgrade-info-label">死亡率</div>
+                <div class="upgrade-info-row">
+                    <div class="upgrade-progress-track">
+                        <div class="upgrade-progress-fill" id="bar-lethality" style="width:3%"></div>
+                    </div>
+                    <span class="upgrade-progress-num" id="num-lethality">3%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="data/tips.js"></script>
+<script src="data/template-spread.js"></script>
+<script src="data/template-symptom.js"></script>
+<script src="data/template-ability.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
